@@ -1,10 +1,5 @@
 import nltk
-
-# nltk.download("punkt_tab")
-# nltk.download("stopwords")
-
 import string
-
 from collections import defaultdict
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -39,7 +34,6 @@ def preprocess(text):
 
     return clean_words
 
-
 def get_sentiment(text):
     blob = TextBlob(text)
     polarity = blob.sentiment.polarity
@@ -52,7 +46,6 @@ def get_sentiment(text):
         sentiment = "Neutral"
 
     return sentiment, polarity
-
 
 def get_rating(polarity):
     if polarity <= -0.8:
